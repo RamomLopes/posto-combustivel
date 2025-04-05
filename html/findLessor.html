@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pesquisar arrendantes</title>
+
+        <link rel="stylesheet" href="../css/findLessor.css">
+
+        <script defer type="module" src="../js/findLessor.js"></script>
+        <script defer src="https://kit.fontawesome.com/63b1d53a31.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+
+            <div class="tittle">
+                <button id="btn-back"><i class="fa-solid fa-arrow-left"></i></button>
+                <h1>Pesquisar arrendantes</h1>
+                <h2>e terceiros</h2>
+            </div>
+
+            <div class="groups">
+                <div class="group-1">
+                    <label for="input">Informe a frota ou a placa do veículo:</label>
+                    <input type="text" name="" id="input">
+
+                    <div id="qtd-group">
+
+                        <div class="qtd-group-1">
+                            <label for="qtd-abast" id="label-qtd">Qtd. abastecida:</label>
+                            <p id="qtd-abast"></p>
+                        </div>
+
+                        <div class="qtd-group-2">
+                            <label for="qtd-remainder" id="label-remainder">Qtd. restante:</label>
+                            <p id="qtd-remainder"></p>
+                        </div>
+
+                        <button id="btn-add-supply"><i class="fa-solid fa-plus"></i></button>
+
+                    </div>
+                    
+                </div>
+    
+                <div id="group-2">
+                    <label for="" id="label-list">Frotas vinculadas</label>
+                    <div id="list"></div>    
+                </div>
+            </div>
+            
+        </header>
+
+        <main>
+
+            <div class="container">
+                <label id="label-span" class="label-span" for="container-span">Arrendante</label>
+                <div id="container-span">
+                    <span id="span">Faça sua pesquisa</span>
+                </div>
+                <div class="info">
+                    <span class="span-info" id="span-fleet">Frota</span>
+                    <span class="span-info" id="span-plate">Placa</span>
+                </div>
+            </div>
+
+            <div id="dialog-overlay"></div>
+            <div id="dialog">
+                <p id="message-dialog">Este é um diálogo simples!</p>
+
+                <div id="abast">
+                    <input id="input-abast" type="number" placeholder="Quant. abastecida">
+                    <button id="btn-add">Add</button>
+                    <button id="btn-reset">Reset</button>
+                </div>
+
+                <button id="btn-close-dialog">Fechar</button>
+            </div>
+
+        </main>
+    </body>
+</html>

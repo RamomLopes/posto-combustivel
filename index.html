@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ticket</title>
+        <link rel="stylesheet" href="../css/index.css">
+
+        <script defer type="module" src="./js/index.js"></script>
+    </head>
+
+    <body>
+        <section class="informacoes">
+
+            <div class="groups">
+                <div class="group1">
+                    <label for="input-combustivel">Combustível:</label>
+                    <select id="select-comb">
+                        <option value="ETANOL">ETANOL</option>
+                        <option value="DIESEL S10">DIESEL S10</option>
+                    </select>
+    
+                    <label for="input-hour">Horário:</label>
+                    <input type="time" name="" id="input-hour">
+    
+                    <label for="input-controle">Nº Controle:</label>
+                    <input type="number" name="" id="input-controle">
+                </div>
+    
+                <div class="group2">
+                    <label for="select-frent">Frentista:</label>
+                    <select id="select-frent"></select>
+    
+                    <label for="input-litros">Litros:</label>
+                    <input type="number" name="" id="input-litros">
+    
+                    <label for="input-fleet">Frota ou placa:</label>
+                    <input type="text" name="" id="input-fleet">
+                </div>
+            </div>
+            <button id="button">Pesquisar arrendante</button>
+
+        </section>
+        <section class="ticket">
+            <div class="header">
+                <h1 class="tittle">USINA BAMBUÍ BIOENERGIA</h1>
+                <div class="local">
+                    <p>CIDADE: BAMBUÍ</p>
+                    <P>UF: MG</P>
+                </div>
+                <P>ENDEREÇO: ROD. LMG 827 KM 10</P>
+                <h1 class="comprov">COMPROVANTE DE ABASTECIMENTO</h1>
+                <p id="num-abast">ABAST. NUMERO: </p>
+            </div>
+            <main>
+                <div class="abast">
+                    <div class="data">
+                        <p id="data2">DATA: </p>
+                        <p id="hora">HORA: </p>
+                    </div>
+                    <p id="combust">COMBUSTÍVEL: ETANOL</p>
+                    <p id="quant">QUANTIDADE: </p>
+                    <p id="value">VALOR: R$ </p>
+                    <p id="plate">PLACA: </p>
+                    <P id="fleet">FROTA: </P>
+                </div>
+                <div class="frentista">
+                    <p id="frent">FRENTISTA: </p>
+                    <p id="mat">MATRÍCULA: </p>
+                </div>
+                <div class="motorista">
+                    <p id="arrend">MOTORISTA: </p>
+                    <p class="end">ASSINATURA:</p>
+                </div>
+            </main>
+        </section>
+    </body>
+</html>

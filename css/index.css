@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    outline: none;
+}
+
+.tittle {
+    margin-top: 0;
+}
+
+.ticket {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 420px;
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 8px;
+}
+
+.header {
+    width: 420px;
+    padding: 0 40px 15px 40px;
+}
+
+.comprov {
+    font-size: 1rem;
+}
+
+.data {
+    display: flex;
+    justify-content: space-between;
+}
+
+.local {
+    display: flex;
+    justify-content: space-between;
+}
+
+main {
+    width: 420px;
+    padding: 0 40px;
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-size: 1.2rem;
+    border-bottom: 1px solid black;
+    margin: 20px 0;
+}
+
+body {
+    height: 100vh;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 200px;
+}
+
+.end {
+    padding-bottom: 40px;
+    border-bottom: 1px solid black;
+}
+
+.informacoes {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.groups {
+    display: flex;
+    gap: 30px;
+}
+
+.group1, .group2 {
+    display: flex;
+    flex-direction: column;
+}
+
+select, input {
+    width: 200px;
+    padding: 5px 0 5px 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+p {
+    padding: 1px 0;
+}
+
+label {
+    margin-top: 5px;
+    color: yellowgreen;
+    font-weight: 500;
+}
+
+button {
+    margin-top: 20px;
+    width: 250px;
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+    background-color: yellowgreen;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+        background-color: transparent;
+        color: yellowgreen;
+        border: 1px solid yellowgreen;
+    }
+}
