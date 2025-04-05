@@ -18,7 +18,8 @@ let numSupply = document.getElementById("num-abast");
 let selectFuel = document.getElementById("select-comb");
 let fuelField = document.getElementById("combust");
 let timeInput = document.getElementById("input-hour");
-let button = document.getElementById("button");
+let btnSearch = document.getElementById("btn-search");
+let btnPrint = document.getElementById("btn-print");
 
 const frontmans = [
     { name: "", registration: "" },
@@ -96,7 +97,11 @@ controlInput.addEventListener("change", () => {
     numSupply.textContent = "ABAST. NÚMERO: " + controlInput.value;
 });
 
-button.addEventListener("click", () => {
+btnSearch.addEventListener("click", () => {
     window.location.href = "../html/findLessor.html";
+});
+
+btnPrint.addEventListener("click", () => {
+    window.print();
 });
 
