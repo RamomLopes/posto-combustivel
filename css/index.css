@@ -163,8 +163,25 @@ button {
     body {
         width: 100vw;
         height: 100vh;
-        margin-left: 0;
         margin: 20px 10px;
+        
+    }
+
+    .informacoes {
+        width: 80%;
+    }
+
+    footer {
+        height: 30vh;
+        margin-top: 70px;
+        padding: 0;
+        left: 0;
+        bottom: 0;
+        background-color: #222;
+    }
+
+    #btn-search {
+        background-color: transparent;
     }
 
     .conteudo {
