@@ -21,7 +21,7 @@ Este é um projeto web simples desenvolvido com HTML, CSS e JavaScript para gere
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/ticket-abastecimento-e-pesquisa-de-terceiros.git
+   git clone https://github.com/seu-usuario/ticket-abastecimento-e-pesquisa-de-terceiros.git](https://github.com/RamomLopes/ticket-abastecimento-e-pesquisa-de-terceiros.git
    ```
 
 2. Navegue até a pasta do projeto:
