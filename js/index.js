@@ -98,7 +98,7 @@ controlInput.addEventListener("change", () => {
 });
 
 btnSearch.addEventListener("click", () => {
-    window.location.href = "../html/findLessor.html";
+    window.location.href = "./html/findLessor.html";
 });
 
 btnPrint.addEventListener("click", () => {
