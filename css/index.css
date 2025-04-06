@@ -182,7 +182,8 @@ button {
     .conteudo {
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        justify-content: center;
+        row-gap: 50px;
     }
 
     #btn-search {
