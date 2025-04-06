@@ -1,6 +1,6 @@
 # Ticket Abastecimento e Pesquisa de Terceiros
 
-Este é um projeto web simples desenvolvido com HTML, CSS e JavaScript para gerenciar tickets de abastecimento e realizar pesquisas relacionadas a terceiros.
+Este é um projeto web simples desenvolvido com HTML, CSS e JavaScript para gerenciar tickets de abastecimento e realizar pesquisas relacionadas a terceiros. Dentro do escopo desta aplicação, terceiros classificados como "arrendante" possuem limite de 300 litros de abastecimento, demais terceiros não possuem controle de quantidade abastecida.
 
 ## 📁 Estrutura do Projeto
 
