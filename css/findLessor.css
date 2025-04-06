@@ -282,3 +282,34 @@ button {
         color: black;
     }
 }
+
+@media (max-width: 500px){
+
+    body, header, main {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        padding: 0;
+        display: flex;
+    }
+
+    .groups {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .label-span {
+        width: 40%;
+    }
+
+    #span-fleet, #span-plate {
+        width: 40%;
+    }
+
+    #btn-add-supply {
+        min-width: 50px;
+        margin: 0;
+    }
+}

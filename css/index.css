@@ -158,3 +158,19 @@ button {
         top: 0;
     }
 }
+
+@media (max-width: 500px) {
+    body {
+        width: 100vw;
+        height: 100vh;
+        margin-left: 0;
+        margin: 20px 10px;
+    }
+
+    .conteudo {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+}
