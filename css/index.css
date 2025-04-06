@@ -171,6 +171,7 @@ button {
 
     body {
         width: 100%;
+        overflow-x: hidden;
     }
 
     .conteudo {
@@ -185,6 +186,14 @@ button {
 
     footer {
         margin-top: 2rem;
+        bottom: 0;
     }
 
+}
+
+@media(max-width: 400px){
+
+    body {
+        height: 120vh;
+    }
 }
