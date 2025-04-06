@@ -57,10 +57,11 @@ h1 {
 body {
     width: 100vw;
     height: 100vh;
-    background-color: #333;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    background-color: #333;
 }
 
 footer {
@@ -166,20 +167,10 @@ button {
 
     .informacoes {
         margin-top: 30px;
-        width: 80%;
     }
 
-    footer {
-        height: 5vh;
-        margin-top: 70px;
-        padding: 0;
-        left: 0;
-        bottom: 0;
-        background-color: #222;
-    }
-
-    #btn-search {
-        background-color: transparent;
+    body {
+        width: 100%;
     }
 
     .conteudo {
@@ -188,33 +179,12 @@ button {
         gap: 30px;
     }
 
-}
-
-@media (max-width: 480px) {
-
-    .informacoes {
-        min-width: 85%;
-        margin-top: 30px;
-        width: 80%;
-    }
-
-    footer {
-        height: 30vh;
-        margin-top: 70px;
-        padding: 0;
-        left: 0;
-        bottom: 0;
-        background-color: #222;
-    }
-
     #btn-search {
         background-color: transparent;
     }
 
-    .conteudo {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
+    footer {
+        margin-top: 2rem;
     }
 
 }
