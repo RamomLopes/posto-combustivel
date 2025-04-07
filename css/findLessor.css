@@ -20,10 +20,16 @@ body {
 
 header {
     width: 100vw;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 0 8rem;
+}
+
+main {
+    margin-top: 20px;
+    height: 50vh;
 }
 
 .tittle {
@@ -43,11 +49,14 @@ header {
 }
 
 .groups {
+    width: 100%;
+    height: 100%;
     display: flex;
 }
 
 .group-1 {
     width: 70%;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -58,9 +67,7 @@ header {
     align-items: center;
     width: 100%;
     height: 100%;
-    text-align: center;
     column-gap: 10px;
-    margin: 20px 0;
 }
 
 .qtd-group-1, .qtd-group-2 {
@@ -69,8 +76,8 @@ header {
 }
 
 #btn-add-supply {
-    width: 5%;
-    height: 100%;
+    width: 8%;
+    height: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,7 +87,7 @@ header {
     border-radius: 10px;
     background-color: white;
     color: black;
-    margin-bottom: 8px;
+    
 }
 
 #label-qtd, #label-remainder {
