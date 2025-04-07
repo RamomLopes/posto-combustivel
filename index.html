@@ -43,8 +43,11 @@
                         <input type="text" name="" id="input-fleet">
                     </div>
                 </div>
-        
-                <button id="btn-print"><i class="fa-solid fa-print"></i></button>
+                
+                <div class="buttons">
+                    <button id="btn-print"><i class="fa-solid fa-print"></i></button>
+                    <button id="btn-config-value"><i class="fa-solid fa-dollar-sign"></i></button>
+                </div>
             </section>
 
             <section id="area-impressao" class="ticket">
@@ -81,6 +84,26 @@
                 </main>
             </section>
         </div>
+
+        <div id="dialog-overlay"></div>
+        <div id="dialog">
+            <p id="message-dialog">Alterar valor unitário dos combustíveis</p>
+
+            <div id="dialog-config">
+                <select id="select-config">
+                    <option value="ETANOL">ETANOL</option>
+                    <option value="DIESEL S10">DIESEL S10</option>
+                </select>
+                <div class="dialog-area">
+                    <input id="input-config" type="number" placeholder="Valor unitário">
+                    <button id="btn-update">Atualizar</button>
+                </div>
+                <span id="span-notification"></span>
+            </div>
+
+            <button id="btn-close-dialog">Fechar</button>
+        </div>
+
 
         <footer><button id="btn-search">Pesquisar arrendante</button></footer>
 

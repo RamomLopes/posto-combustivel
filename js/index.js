@@ -19,7 +19,17 @@ let selectFuel = document.getElementById("select-comb");
 let fuelField = document.getElementById("combust");
 let timeInput = document.getElementById("input-hour");
 let btnSearch = document.getElementById("btn-search");
+
 let btnPrint = document.getElementById("btn-print");
+
+let btnOpenPanelUpdateFuelValue = document.getElementById("btn-config-value");
+let dialog = document.getElementById("dialog");
+let dialogOverlay = document.getElementById("dialog-overlay");
+let dialogSelect = document.getElementById("select-config");
+let btnUpdateFuelValue = document.getElementById("btn-update");
+let btnCloseDialog = document.getElementById("btn-close-dialog");
+let inputFuelPrice = document.getElementById("input-config");
+let spanNotification = document.getElementById("span-notification");
 
 const frontmans = [
     { name: "", registration: "" },
@@ -41,12 +51,20 @@ frontmans.forEach(frontman => {
 });
 
 function calcPrice(quantity){
-    let result = quantity * 3.672;
+    let result = 0.0;
+
+    if(selectFuel.value == "ETANOL"){
+        result = quantity * +localStorage.getItem("priceEtanol");
+    }else {
+        result = quantity * +localStorage.getItem("priceDiesel");
+    }
+    
     return result;
 }
 
 selectFuel.addEventListener("change", () => {
     fuelField.textContent = "COMBUSTÍVEL: " + selectFuel.value;
+    value.textContent = "VALOR: R$ " + calcPrice(litersInput.value).toFixed(2).replace(".", ",");
 });
 
 litersInput.addEventListener("change", () => {
@@ -93,6 +111,25 @@ fleetInput.addEventListener("change", () => {
     });
 });
 
+btnUpdateFuelValue.addEventListener("click", () => {
+    if(inputFuelPrice.value == ""){
+        spanNotification.textContent = "Campos em branco!";
+        spanNotification.style.color = "red";
+        return;
+    }else{
+        spanNotification.textContent = "Alteração realizada com sucesso!";
+        spanNotification.style.color = "green";
+    }
+
+    if(dialogSelect.value == "ETANOL"){
+        localStorage.setItem("priceEtanol", inputFuelPrice.value);
+    }else if(dialogSelect.value == "DIESEL S10") {
+        localStorage.setItem("priceDiesel", inputFuelPrice.value);
+    }
+
+    inputFuelPrice.value = "";
+});
+
 controlInput.addEventListener("change", () => {
     numSupply.textContent = "ABAST. NÚMERO: " + controlInput.value;
 });
@@ -104,4 +141,17 @@ btnSearch.addEventListener("click", () => {
 btnPrint.addEventListener("click", () => {
     window.print();
 });
+
+btnOpenPanelUpdateFuelValue.addEventListener("click", () => {
+    dialog.style = "display: block";
+    dialogOverlay.style = "display: block";
+});
+
+function closeDialog(){
+    dialog.style = "display: none";
+    dialogOverlay.style = "display: none";
+    spanNotification.textContent = "";
+}
+
+btnCloseDialog.addEventListener("click", closeDialog);
 
