@@ -1,29 +1,30 @@
 import data from "./data.js";
 
-let span = document.getElementById("span");
-let inputSearch = document.getElementById("input");
-let labelSpan = document.getElementById("label-span");
-let spanFleet = document.getElementById("span-fleet");
-let spanPlate = document.getElementById("span-plate");
+const span = document.getElementById("span");
+const inputSearch = document.getElementById("input");
+const labelSpan = document.getElementById("label-span");
+const spanFleet = document.getElementById("span-fleet");
+const spanPlate = document.getElementById("span-plate");
 
-let listFleets = document.getElementById("list");
-let listFleetsPanel = document.getElementById("group-2");
+const listFleets = document.getElementById("list");
+const listFleetsPanel = document.getElementById("group-2");
+const ul = document.createElement("ul");
 
-let btnSupply = document.getElementById("btn-add-supply");
-let dialogBtnAdd = document.getElementById("btn-add");
-let dialogBtnReset = document.getElementById("btn-reset");
-let btnBack = document.getElementById("btn-back");
+const btnSupply = document.getElementById("btn-add-supply");
+const dialogBtnAdd = document.getElementById("btn-add");
+const dialogBtnReset = document.getElementById("btn-reset");
+const btnBack = document.getElementById("btn-back");
 
-let inputSupply = document.getElementById("input-abast");
-let quantSupply = document.getElementById("qtd-abast");
-let quantRemainder = document.getElementById("qtd-remainder");
+const inputSupply = document.getElementById("input-abast");
+const quantSupply = document.getElementById("qtd-abast");
+const quantRemainder = document.getElementById("qtd-remainder");
 
-let qtdGroupPanel = document.getElementById("qtd-group");
+const qtdGroupPanel = document.getElementById("qtd-group");
 
-let dialog = document.getElementById("dialog");
-let dialogOverlay = document.getElementById("dialog-overlay");
-let btnCloseDialog = document.getElementById("btn-close-dialog");
-let messageDialog = document.getElementById("message-dialog");
+const dialog = document.getElementById("dialog");
+const dialogOverlay = document.getElementById("dialog-overlay");
+const btnCloseDialog = document.getElementById("btn-close-dialog");
+const messageDialog = document.getElementById("message-dialog");
 
 let lessorName;
 let reset = false;
@@ -139,12 +140,17 @@ function updateSupply(name){
 function showListElements(name){
     listFleetsPanel.style = "display: flex; flex-direction: column";
 
+    while(ul.firstChild){
+        ul.removeChild(ul.firstChild);
+    }
+
     data.forEach(lessor => {
         lessor.vehicles.forEach(vehicle => {
             if(lessor.name == name){
-                let line = document.createElement('p');
-                line.textContent = vehicle.fleet;
-                listFleets.appendChild(line);
+                let item = document.createElement('li');
+                item.textContent = vehicle.fleet;
+                ul.appendChild(item);
+                listFleets.appendChild(ul);
             }
         });
     });

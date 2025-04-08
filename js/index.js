@@ -1,35 +1,35 @@
 import data from './data.js';
 
-let value = document.getElementById("value");
-let quant = document.getElementById("quant");
-let dateDay = document.getElementById("data2");
-let hour = document.getElementById("hora");
+const value = document.getElementById("value");
+const quant = document.getElementById("quant");
+const dateDay = document.getElementById("data2");
+const hour = document.getElementById("hora");
 
-let frontmenSelect = document.getElementById("select-frent");
-let frontmenField = document.getElementById("frent");
-let registrationField = document.getElementById("mat");
-let litersInput = document.getElementById("input-litros");
-let fleetInput = document.getElementById("input-fleet");
-let fleetField = document.getElementById("fleet");
-let driverField = document.getElementById("arrend");
-let plateField = document.getElementById("plate");
-let controlInput = document.getElementById("input-controle");
-let numSupply = document.getElementById("num-abast");
-let selectFuel = document.getElementById("select-comb");
-let fuelField = document.getElementById("combust");
-let timeInput = document.getElementById("input-hour");
-let btnSearch = document.getElementById("btn-search");
+const frontmenSelect = document.getElementById("select-frent");
+const frontmenField = document.getElementById("frent");
+const registrationField = document.getElementById("mat");
+const litersInput = document.getElementById("input-litros");
+const fleetInput = document.getElementById("input-fleet");
+const fleetField = document.getElementById("fleet");
+const driverField = document.getElementById("arrend");
+const plateField = document.getElementById("plate");
+const controlInput = document.getElementById("input-controle");
+const numSupply = document.getElementById("num-abast");
+const selectFuel = document.getElementById("select-comb");
+const fuelField = document.getElementById("combust");
+const timeInput = document.getElementById("input-hour");
+const btnSearch = document.getElementById("btn-search");
 
-let btnPrint = document.getElementById("btn-print");
+const btnPrint = document.getElementById("btn-print");
 
-let btnOpenPanelUpdateFuelValue = document.getElementById("btn-config-value");
-let dialog = document.getElementById("dialog");
-let dialogOverlay = document.getElementById("dialog-overlay");
-let dialogSelect = document.getElementById("select-config");
-let btnUpdateFuelValue = document.getElementById("btn-update");
-let btnCloseDialog = document.getElementById("btn-close-dialog");
-let inputFuelPrice = document.getElementById("input-config");
-let spanNotification = document.getElementById("span-notification");
+const btnOpenPanelUpdateFuelValue = document.getElementById("btn-config-value");
+const dialog = document.getElementById("dialog");
+const dialogOverlay = document.getElementById("dialog-overlay");
+const dialogSelect = document.getElementById("select-config");
+const btnUpdateFuelValue = document.getElementById("btn-update");
+const btnCloseDialog = document.getElementById("btn-close-dialog");
+const inputFuelPrice = document.getElementById("input-config");
+const spanNotification = document.getElementById("span-notification");
 
 const frontmans = [
     { name: "", registration: "" },
