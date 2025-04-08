@@ -151,6 +151,8 @@ button {
     color: white;
     border: none;
     font-size: 1rem;
+    padding: 0 8rem;
+    text-align: start;
     
     &:hover {
         color: yellowgreen;
