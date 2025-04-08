@@ -287,16 +287,15 @@ button {
 }
 
 #btn-back {
-    width: 200px;
-    height: 50%;
+    width: 18%;
     background-color: transparent;
-    color: yellowgreen;
+    color: white;
     font-weight: 600;
     font-size: 16px;
     text-align: start;
 
     &:hover {
-        color: white;
+        color: yellowgreen;
         border: none;
     }
 }

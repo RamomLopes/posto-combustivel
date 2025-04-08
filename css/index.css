@@ -149,12 +149,12 @@ button {
 }
 
 #btn-search {
-    width: 500px;
+    width: 14%;
     background-color: #222;
     color: white;
     border: none;
     font-size: 1rem;
-    padding: 0 8rem;
+    margin: 0 8rem;
     text-align: start;
     
     &:hover {
