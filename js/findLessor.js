@@ -33,7 +33,6 @@ init();
 
 function init(){
     qtdGroupPanel.style = "display: none";
-    inputSearch.style = "margin-bottom: 20px";
 }
 
 function showLessorInformation(){
@@ -73,7 +72,7 @@ inputSearch.addEventListener("change", () => {
                 clearFields();
                 span.textContent = "Faça sua pesquisa";
             }else if(input == vehicle.fleet || input == vehicle.plate){
-                inputSearch.style = "margin-bottom: 0";
+                
                 span.textContent = lessor.name;
                 spanFleet.textContent = "Frota: " + vehicle.fleet;
 
