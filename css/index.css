@@ -10,7 +10,7 @@
 
 body {
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,6 +32,8 @@ footer {
     justify-content: start;
     align-items: center;
     background-color: #222;
+    position: absolute;
+    bottom: 0;
 }
 
 .tittle {

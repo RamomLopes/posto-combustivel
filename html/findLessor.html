@@ -11,47 +11,41 @@
         <script defer src="https://kit.fontawesome.com/63b1d53a31.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <header>
 
-            <div class="tittle">
-                <h1>Pesquisar arrendantes</h1>
-                <h2>e terceiros</h2>
-            </div>
+        <section class="tittle">
+            <h1>Pesquisar arrendantes</h1>
+            <h2>e terceiros</h2>
+        </section>
 
-            <div class="groups">
-                <div class="group-1">
+        <section class="groups">
+            <div class="group-1">
+                <div class="search">
                     <label for="input">Informe a frota ou a placa do veículo:</label>
                     <input type="text" name="" id="input">
-
-                    <div id="qtd-group">
-
-                        <div class="qtd-group-1">
-                            <label for="qtd-abast" id="label-qtd">Qtd. abastecida:</label>
-                            <p id="qtd-abast"></p>
-                        </div>
-
-                        <div class="qtd-group-2">
-                            <label for="qtd-remainder" id="label-remainder">Qtd. restante:</label>
-                            <p id="qtd-remainder"></p>
-                        </div>
-
-                        <button id="btn-add-supply"><i class="fa-solid fa-plus"></i></button>
-
-                    </div>
-                    
                 </div>
-    
-                <div id="group-2">
-                    <label for="" id="label-list">Frotas vinculadas</label>
-                    <div id="list"></div>    
+
+                <div id="qtd-group">
+                    <div class="qtd-group-1">
+                        <label for="qtd-abast" id="label-qtd">Qtd. abastecida:</label>
+                        <p id="qtd-abast"></p>
+                    </div>
+
+                    <div class="qtd-group-2">
+                        <label for="qtd-remainder" id="label-remainder">Qtd. restante:</label>
+                        <p id="qtd-remainder"></p>
+                    </div>
+
+                    <button id="btn-add-supply"><i class="fa-solid fa-plus"></i></button>
                 </div>
             </div>
-            
-        </header>
+            <div id="group-2">
+                <label for="" id="label-list">Frotas vinculadas</label>
+                <div id="list"></div>  
+            </div>
+        </section>
 
-        <main>
-
-            <div class="container">
+        <section class="info-container">
+            <div class="info-content">
                 <label id="label-span" class="label-span" for="container-span">Arrendante</label>
                 <div id="container-span">
                     <span id="span">Faça sua pesquisa</span>
@@ -61,7 +55,7 @@
                     <span class="span-info" id="span-plate">Placa</span>
                 </div>
             </div>
-        </main>
+        </section>
 
         <div id="dialog-overlay"></div>
         <div id="dialog">
@@ -75,7 +69,6 @@
 
             <button id="btn-close-dialog">Fechar</button>
         </div>
-
         <footer><button id="btn-back">Ticket abastecimento</button></footer>
     </body>
 </html>

@@ -10,7 +10,7 @@
 
 body {
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,39 +20,28 @@ body {
     color: #fff;
 }
 
-header {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 0 8rem;
-}
-
-main {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: start;
-}
-
 footer {
     width: 100%;
-    height: 20vh;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    margin-top: 20px;
+    height: 10vh;
+    align-content: center;
     background-color: #222;
+    position: absolute;
+    bottom: 0;
 }
 
 .tittle {
-    margin: 20px 0;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 0 8rem;
 }
 
 .groups {
     width: 100%;
-    height: 50%;
+    height: 25%;
     display: flex;
+    padding: 20px 8rem;
 }
 
 .group-1 {
@@ -60,15 +49,20 @@ footer {
     height: 100%;
     display: flex;
     flex-direction: column;
-    
+    align-content: space-around;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
 }
 
 #qtd-group {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: start;
     align-items: end;
-    width: 100%;
-    height: 60%;
     column-gap: 10px;
 }
 
@@ -102,6 +96,8 @@ footer {
 
 #qtd-abast, #qtd-remainder {
     width: 150px;
+    height: 50px;
+    align-content: center;
     border: 1px solid white;
     text-align: center;
 }
@@ -184,12 +180,17 @@ h2 {
     text-align: start;
 }
 
-.container {
+.info-container {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}
+
+.info-content {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: start;
     padding: 0 8rem;
 }
 
