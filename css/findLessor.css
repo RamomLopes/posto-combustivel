@@ -317,27 +317,22 @@ button {
 
 @media (max-width: 1000px){
 
-    header {
-        margin: 0;
-        padding: 0 2rem;
+    .tittle {
+        position: absolute;
+        top: 0;
     }
 
     body {
-        height: 120vh;
+        height: 100vh;
     }
 
     footer {
+        bottom: 0;
         width: 100%;
-        margin-bottom: 0;
     }
 
     #span {
         font-size: 32px;
-    }
-
-    .groups {
-        display: flex;
-        flex-direction: column;
     }
 
     #btn-back {
@@ -345,15 +340,10 @@ button {
         padding: 0 3rem;
     }
 
-    .container {
-        margin: 20px 0;
-        padding: 0 2rem;
-    }
-
     .groups {
         flex-direction: column;
         row-gap: 20px;
-        height: 100%;
+        height: 30%;
     }
 
     #label-list {
@@ -366,6 +356,7 @@ button {
 
     .label-span {
         width: 40%;
+        margin-top: 40px;
     }
 
     #span-fleet, #span-plate {
@@ -376,5 +367,57 @@ button {
         min-width: 50px;
         margin: 0;
     }
+
+}
+
+@media (max-width: 850px){
+
+    .tittle {
+        padding: 0 2rem;
+    }
+
+    .tittle h1 {
+        font-size: 2rem;
+    }
+
+    .tittle h2 {
+        font-size: 1rem;
+    }
+
+    .groups {
+        padding: 0 2rem;
+    }
+
+    .info-content {
+        padding: 0 2rem;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .tittle h1 {
+        font-size: 1.5rem;
+    }
+
+    .tittle h2 {
+        font-size: 1rem;
+    }
+
+    .tittle {
+        padding: 0 1rem;
+    }
+
+    .groups {
+        padding: 0;
+        margin: 0;
+        transform: scale(0.9);
+    }
+
+    .info-content {
+        padding: 0;
+        transform: scale(0.9);
+    }
+
 
 }
