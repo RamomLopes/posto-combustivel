@@ -313,11 +313,6 @@ button {
 
 @media (max-width: 1000px){
 
-    .tittle {
-        position: absolute;
-        top: 0;
-    }
-
     body {
         height: 100vh;
     }
