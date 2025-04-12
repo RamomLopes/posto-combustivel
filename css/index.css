@@ -270,14 +270,20 @@ button {
 
     body {
         width: 100vw;
-        height: 140vh;
+        height: 110vh;
     }
 
     .conteudo {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: start;
         row-gap: 0;
+    }
+
+    footer {
+        bottom: 0;
+        position: fixed;
+        height: 10vh;
     }
 
     #btn-search {
@@ -285,22 +291,6 @@ button {
         padding: 0 3rem;
         width: 100%;
         background-color: transparent;
-    }
-
-}
-
-@media(max-width: 400px){
-
-    body {
-        height: 150vh;
-    }
-
-    .conteudo {
-        gap: 0;
-    }
-
-    footer {
-        margin-top: 0;
     }
 
 }
