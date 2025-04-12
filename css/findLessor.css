@@ -13,8 +13,6 @@ body {
     height: 90vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background-color: #333;
     overflow-x: hidden;
     color: #fff;
@@ -39,7 +37,7 @@ footer {
 
 .groups {
     width: 100%;
-    height: 25%;
+    height: 35%;
     display: flex;
     padding: 20px 8rem;
 }
@@ -49,7 +47,6 @@ footer {
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-content: space-around;
 }
 
 .search {
@@ -106,8 +103,6 @@ footer {
     width: 60%;
     height: 100%;
     display: none;
-    justify-content: start;
-    align-items: start;
 }
 
 #list {
@@ -314,6 +309,7 @@ button {
         border: none;
     }
 }
+
 
 @media (max-width: 1000px){
 
