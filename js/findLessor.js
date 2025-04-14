@@ -13,7 +13,6 @@ const ul = document.createElement("ul");
 const btnSupply = document.getElementById("btn-add-supply");
 const dialogBtnAdd = document.getElementById("btn-add");
 const dialogBtnReset = document.getElementById("btn-reset");
-const btnBack = document.getElementById("btn-back");
 
 const inputSupply = document.getElementById("input-abast");
 const quantSupply = document.getElementById("qtd-abast");
@@ -197,6 +196,3 @@ dialogBtnReset.addEventListener("click", () => {
     closeDialog();
 });
 
-btnBack.addEventListener("click", () => {
-    window.location.href = "../index.html";
-});
