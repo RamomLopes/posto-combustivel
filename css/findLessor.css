@@ -6,11 +6,31 @@
     box-sizing: border-box;
     list-style: none;
     font-family: "Poppins", sans-serif;
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 10vh;
+    background-color: #222;
+    padding: 0 8rem;
+    align-content: center;
+    color: white;
+}
+
+a {
+    color: inherit;
+
+    &:hover {
+        color: yellowgreen;
+    }
 }
 
 body {
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     background-color: #333;
@@ -18,21 +38,17 @@ body {
     color: #fff;
 }
 
-footer {
-    width: 100%;
-    height: 10vh;
-    align-content: center;
-    background-color: #222;
-    position: absolute;
-    bottom: 0;
-}
-
 .tittle {
     width: 100vw;
+    margin-top: 11vh;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    font-size: 1rem;
     padding: 0 8rem;
+}
+
+.tittle h1 {
+    font-size: 2rem;
 }
 
 .groups {
@@ -295,40 +311,14 @@ button {
     }
 }
 
-#btn-back {
-    width: auto;
-    background-color: transparent;
-    color: white;
-    font-weight: 600;
-    font-size: 1rem;
-    text-align: start;
-    margin: 0 8rem;
-
-    &:hover {
-        color: yellowgreen;
-        border: none;
-    }
-}
-
-
 @media (max-width: 1000px){
 
     body {
         height: 100vh;
     }
 
-    footer {
-        bottom: 0;
-        width: 100%;
-    }
-
     #span {
         font-size: 32px;
-    }
-
-    #btn-back {
-        margin: 0;
-        padding: 0 3rem;
     }
 
     .groups {
@@ -363,6 +353,10 @@ button {
 
 @media (max-width: 850px){
 
+    header {
+        padding: 0 2rem;
+    }
+
     .tittle {
         padding: 0 2rem;
     }
@@ -386,6 +380,14 @@ button {
 }
 
 @media (max-width: 450px) {
+
+    header {
+        padding: 0 1rem;
+    }
+
+    #input {
+        width: 220px;
+    }
 
     .tittle h1 {
         font-size: 1.5rem;
