@@ -90,22 +90,37 @@ frontmenSelect.addEventListener("change", () => {
     });
 });
 
+function clearFields(){
+    fleetField.textContent = "FROTA:";
+    driverField.textContent = "MOTORISTA:";
+    plateField.textContent = "PLACA:";
+}
+
 fleetInput.addEventListener("change", () => {
+    let info = fleetInput.value.toUpperCase();
+
+    if(info == ""){
+        clearFields();
+        return;
+    } 
+
     data.forEach(lessor => {
         lessor.vehicles.forEach(vehicle => {
-            let info = fleetInput.value.toUpperCase();
-
             if(info == vehicle.fleet || info == vehicle.plate){
                 fleetField.textContent = "FROTA: " + vehicle.fleet;
                 driverField.textContent = "MOTORISTA: " + lessor.name;
 
-                let sufixoplate = vehicle.plate.slice(3);
-                let prefixoplate = vehicle.plate.slice(0, 3);
+                if(vehicle.plate != "NULL"){
+                    let sufixoplate = vehicle.plate.slice(3);
+                    let prefixoplate = vehicle.plate.slice(0, 3);
 
-                let plate = prefixoplate + "-" + sufixoplate;
+                    let plate = prefixoplate + "-" + sufixoplate;
 
-                plateField.textContent = "PLACA: " + plate;
-            } 
+                    plateField.textContent = "PLACA: " + plate;
+                }else{
+                    plateField.textContent = "PLACA: SEM PLACA";
+                }                
+            }
         });
     });
 });
