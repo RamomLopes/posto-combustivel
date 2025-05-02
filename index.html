@@ -1,114 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posto BambuiBioenergia</title>
+    <link rel="stylesheet" href="css/index.css">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ticket</title>
-        <link rel="stylesheet" href="./css/index.css">
-
-        <script defer type="module" src="./js/index.js"></script>
-        <script defer src="https://kit.fontawesome.com/63b1d53a31.js" crossorigin="anonymous"></script>
-    </head>
-
-    <body>
-
-        <header>
-            <a href="html/findLessor.html">
-                Pesquisar arrendante
-            </a>
-        </header>
-
-        <div class="conteudo">
-
-            <section class="informacoes">
-
-                <div class="groups">
-                    <div class="group1">
-                        <label for="input-combustivel">Combustível:</label>
-                        <select id="select-comb">
-                            <option value="ETANOL">ETANOL</option>
-                            <option value="DIESEL S10">DIESEL S10</option>
-                        </select>
-        
-                        <label for="input-hour">Horário:</label>
-                        <input type="time" name="" id="input-hour">
-        
-                        <label for="input-controle">Nº Controle:</label>
-                        <input type="number" name="" id="input-controle">
-                    </div>
-        
-                    <div class="group2">
-                        <label for="select-frent">Frentista:</label>
-                        <select id="select-frent"></select>
-        
-                        <label for="input-litros">Litros:</label>
-                        <input type="number" name="" id="input-litros">
-        
-                        <label for="input-fleet">Frota ou placa:</label>
-                        <input type="text" name="" id="input-fleet">
-                    </div>
-                </div>
-                
-                <div class="buttons">
-                    <button id="btn-print"><i class="fa-solid fa-print"></i></button>
-                    <button id="btn-config-value"><i class="fa-solid fa-dollar-sign"></i></button>
-                </div>
-            </section>
-
-            <section id="area-impressao" class="ticket">
-                <div class="header">
-                    <h1 class="tittle">USINA BAMBUÍ BIOENERGIA</h1>
-                    <div class="local">
-                        <p>CIDADE: BAMBUÍ</p>
-                        <P>UF: MG</P>
-                    </div>
-                    <P>ENDEREÇO: ROD. LMG 827 KM 10</P>
-                    <h1 class="comprov">COMPROVANTE DE ABASTECIMENTO</h1>
-                    <p id="num-abast">ABAST. NUMERO: </p>
-                </div>
-                <main>
-                    <div class="abast">
-                        <div class="data">
-                            <p id="data2">DATA: </p>
-                            <p id="hora">HORA: </p>
-                        </div>
-                        <p id="combust">COMBUSTÍVEL: ETANOL</p>
-                        <p id="quant">QUANTIDADE: </p>
-                        <p id="value">VALOR: R$ </p>
-                        <p id="plate">PLACA: </p>
-                        <P id="fleet">FROTA: </P>
-                    </div>
-                    <div class="frentista">
-                        <p id="frent">FRENTISTA: </p>
-                        <p id="mat">MATRÍCULA: </p>
-                    </div>
-                    <div class="motorista">
-                        <p id="arrend">MOTORISTA: </p>
-                        <p class="end">ASSINATURA:</p>
-                    </div>
-                </main>
-            </section>
+    <script defer src="https://kit.fontawesome.com/63b1d53a31.js" crossorigin="anonymous"></script>
+    <script defer type="module" src="../js/listLessor.js"></script>
+</head>
+<body>
+    
+    <header>
+        <div class="header-content">
+            <div class="tittle">
+                <a href="index.html">
+                    <h1>Posto</h1>
+                </a>
+            </div>
+    
+            <nav>
+                <ul>
+                    <a href="/html/findLessor.html"><li>Pesquisa</li></a>
+                    <a href="/html/ticket.html"><li>Ticket abastecimento</li></a>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <div id="dialog-overlay"></div>
-        <div id="dialog">
-            <p id="message-dialog">Alterar valor unitário dos combustíveis</p>
+    <section class="beggin-container">
+        <div class="beggin-content">
+            <div class="beggin-tittle">
+                <h1>Posto <br> Bambui Bioenergia</h1>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Culpa incidunt aut totam, nulla voluptatem inventore ipsa
+                necessitatibus facilis dicta aspernatur rerum atque?
+                Tempore praesentium quia vero cum dolor, quis voluptas?
+            </p>
+        </div>
+    </section>
 
-            <div id="dialog-config">
-                <select id="select-config">
-                    <option value="ETANOL">ETANOL</option>
-                    <option value="DIESEL S10">DIESEL S10</option>
-                </select>
-                <div class="dialog-area">
-                    <input id="input-config" type="number" placeholder="Valor unitário">
-                    <button id="btn-update">Atualizar</button>
-                </div>
-                <span id="span-notification"></span>
+    <section class="lessor-container">
+        <div class="lessor-content">
+            <div class="lessor-tittle">
+                <i class="fa-regular fa-id-card"></i>
+                <h1>Arrendantes</h1>
+                <h3>Listagem</h3>
             </div>
 
-            <button id="btn-close-dialog">Fechar</button>
-        </div>
+            <div class="lessor-grid"></div>
 
-    </body>
+            <div class="lessor-tittle">
+                <i class="fa-regular fa-id-card"></i>
+                <h1>Terceiros</h1>
+                <h3>Listagem</h3>
+            </div>
+
+            <div class="third-grid"></div>
+        </div>
+    </section>
+
+</body>
 </html>

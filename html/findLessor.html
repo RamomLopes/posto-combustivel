@@ -13,40 +13,57 @@
     <body>
 
         <header>
-            <a href="../index.html">
-                Ticket abastecimento
-            </a>
+            <div class="header-content">
+                <div class="tittle">
+                    <a href="../index.html">
+                        <h1>Posto</h1>
+                    </a>
+                </div>
+        
+                <nav>
+                    <ul>
+                        <a href="findLessor.html"><li>Pesquisa</li></a>
+                        <a href="ticket.html"><li>Ticket abastecimento</li></a>
+                    </ul>
+                </nav>
+            </div>
         </header>
 
-        <section class="tittle">
-            <h1>Pesquisar arrendantes</h1>
-            <h2>e terceiros</h2>
+        <section class="tittle-container">
+            <div class="tittle-content">
+                <h1>Pesquisar arrendantes</h1>
+                <h2>e terceiros</h2>
+            </div>
         </section>
 
-        <section class="groups">
-            <div class="group-1">
-                <div class="search">
-                    <label for="input">Informe a frota ou a placa do veículo:</label>
-                    <input type="text" name="" id="input">
+        <section class="groups-container">
+            <div class="groups-content">
+
+                <div class="group-1">
+                    <div class="search">
+                        <label for="input">Informe a frota ou a placa do veículo:</label>
+                        <input type="text" name="" id="input">
+                    </div>
+    
+                    <div id="qtd-group">
+                        <div class="qtd-group-1">
+                            <label for="qtd-abast" id="label-qtd">Qtd. abastecida:</label>
+                            <p id="qtd-abast"></p>
+                        </div>
+    
+                        <div class="qtd-group-2">
+                            <label for="qtd-remainder" id="label-remainder">Qtd. restante:</label>
+                            <p id="qtd-remainder"></p>
+                        </div>
+    
+                        <button id="btn-add-supply"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+                <div id="group-2">
+                    <label for="" id="label-list">Frotas vinculadas</label>
+                    <div id="list"></div>  
                 </div>
 
-                <div id="qtd-group">
-                    <div class="qtd-group-1">
-                        <label for="qtd-abast" id="label-qtd">Qtd. abastecida:</label>
-                        <p id="qtd-abast"></p>
-                    </div>
-
-                    <div class="qtd-group-2">
-                        <label for="qtd-remainder" id="label-remainder">Qtd. restante:</label>
-                        <p id="qtd-remainder"></p>
-                    </div>
-
-                    <button id="btn-add-supply"><i class="fa-solid fa-plus"></i></button>
-                </div>
-            </div>
-            <div id="group-2">
-                <label for="" id="label-list">Frotas vinculadas</label>
-                <div id="list"></div>  
             </div>
         </section>
 
