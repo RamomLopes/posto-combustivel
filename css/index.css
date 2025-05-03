@@ -101,5 +101,9 @@ header {
             margin: 50px 0;
             text-align: start;
         }
+
+        #list-third {
+            margin-top: 100px;
+        }
     }
 }
