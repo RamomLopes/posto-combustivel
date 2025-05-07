@@ -25,6 +25,8 @@ const dialogOverlay = document.getElementById("dialog-overlay");
 const btnCloseDialog = document.getElementById("btn-close-dialog");
 const messageDialog = document.getElementById("message-dialog");
 
+const btnFullReset = document.getElementById("btn-full-reset");
+
 let lessorName;
 let reset = false;
 
@@ -194,5 +196,11 @@ dialogBtnReset.addEventListener("click", () => {
     })
 
     closeDialog();
+});
+
+btnFullReset.addEventListener('click', () => {
+    if (confirm('Deseja realmente deletar todos os dados de abastecimentos?')){
+        localStorage.clear();
+    }
 });
 
