@@ -77,15 +77,16 @@ button {
 
 .container {
     width: 100%;
-    height: 90vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 
     .content {
-        width: 60%;
+        width: 80%;
         height: 100%;
         display: flex;
+        margin-top: 30px;
         justify-content: space-between;
         align-items: center;
     }
