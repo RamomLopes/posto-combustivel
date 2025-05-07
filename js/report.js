@@ -12,7 +12,7 @@ for (let i = 0; i < localStorage.length; i++) {
         let registerSupply = document.createElement('td');
         let registerRemaind = document.createElement('td');
 
-        registerName.textContent = key + ' litros';
+        registerName.textContent = key;
         registerSupply.textContent = value + ' litros';
         registerRemaind.textContent = (300 - (+value)) + ' litros';
 
