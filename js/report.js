@@ -16,12 +16,17 @@ for (let i = 0; i < localStorage.length; i++) {
         registerSupply.textContent = value + ' litros';
         registerRemaind.textContent = (300 - (+value)) + ' litros';
 
+        if (value >= 245) {
+            registerRemaind.style = 'color: lightcoral';
+        }else if(value < 245 && value >= 200) {
+            registerRemaind.style = 'color: yellow';
+        }
+
         register.appendChild(registerName);
         register.appendChild(registerSupply);
         register.appendChild(registerRemaind);
 
         table.appendChild(register);
-
     }
     // Faça algo com a chave e o valor aqui
 }
