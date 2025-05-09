@@ -6,7 +6,7 @@ for (let i = 0; i < localStorage.length; i++) {
     let value = localStorage.getItem(key);
     console.log(`Chave: ${key}, Valor: ${value}`);
 
-    if (!key.toString().includes('price')){
+    if (!key.toString().includes('price') && (value !== '0')){
         let register = document.createElement('tr');
         let registerName = document.createElement('td');
         let registerSupply = document.createElement('td');
