@@ -64,7 +64,8 @@ header {
         row-gap: 50px;
         
         h1 {
-            font-size: 40px;
+            font-size: 3rem;
+            line-height: 60px;
         }
 
         p {
