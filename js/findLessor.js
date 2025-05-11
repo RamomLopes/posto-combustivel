@@ -117,12 +117,12 @@ function showDialog(message){
     }
 
     dialog.style = "display: block";
-    dialogOverlay.style = "display: block"
+    dialogOverlay.style = "display: block";
 }
 
 function closeDialog(){
     dialog.style = "display: none";
-    dialogOverlay.style = "display: none"
+    dialogOverlay.style = "display: none";
 }
 
 function updateSupply(name){
