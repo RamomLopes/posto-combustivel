@@ -14,29 +14,6 @@ a {
     color: inherit;
 }
 
-header {
-    width: 100%;
-    height: fit-content;
-    background-color: #fff;
-    padding: 1.5rem 0;
-    color: #333;
-    display: flex;
-    justify-content: center;
-
-    .header-content {
-        width: 80%;
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        ul {
-            display: flex;
-            column-gap: 50px;
-        }
-    }
-}
-
 body {
     overflow-x: hidden;
     background-color: #333;
