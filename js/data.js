@@ -24,7 +24,8 @@ const data = [
         { fleet: "25016677", plate: "HLG6283" }], 
         supply: 0.0 },
     { name: "ALEXANDRE CARVALHO ALZAMORA", vehicles: [
-        { fleet: "25023018", plate: "GMW1436" }], 
+        { fleet: "25023018", plate: "GMW1436" }
+        { fleet: "2501870", plate: "WWH1I87" }], 
         supply: 0.0 },
     { name: "BRUNO THIAGO DE CARVALHO", vehicles: [
         { fleet: "25021870", plate: "QPO4D95" }], 
