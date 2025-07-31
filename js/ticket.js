@@ -1,20 +1,20 @@
 import data from './data.js';
 
-const value = document.getElementById("value");
-const quant = document.getElementById("quant");
-const dateDay = document.getElementById("data2");
-const hour = document.getElementById("hora");
+const value = document.querySelectorAll(".value");
+const quant = document.querySelectorAll(".quant");
+const dateDay = document.querySelectorAll(".data2");
+const hour = document.querySelectorAll(".hora");
 
 const frontmenSelect = document.getElementById("select-frent");
-const frontmenField = document.getElementById("frent");
-const registrationField = document.getElementById("mat");
+const frontmenField = document.querySelectorAll(".frent");
+const registrationField = document.querySelectorAll(".mat");
 const litersInput = document.getElementById("input-litros");
 const fleetInput = document.getElementById("input-fleet");
-const fleetField = document.getElementById("fleet");
-const driverField = document.getElementById("arrend");
-const plateField = document.getElementById("plate");
+const fleetField = document.querySelectorAll(".fleet");
+const driverField = document.querySelectorAll(".arrend");
+const plateField = document.querySelectorAll(".plate");
 const controlInput = document.getElementById("input-controle");
-const numSupply = document.getElementById("num-abast");
+const numSupply = document.querySelectorAll(".num-abast");
 const selectFuel = document.getElementById("select-comb");
 const fuelField = document.getElementById("combust");
 const timeInput = document.getElementById("input-hour");
@@ -39,7 +39,6 @@ const frontmans = [
     { name: "WELLINGTON CANDIDO", registration: "77323" },
     { name: "WESLEY SILVA", registration: "77208" },
     { name: "WALISON SANTANA", registration: "77824" },
-    { name: "WALISSON GOMES", registration: "76672" },
 ];
 
 frontmans.forEach(frontman => {
@@ -62,37 +61,47 @@ function calcPrice(quantity){
 }
 
 selectFuel.addEventListener("change", () => {
+    
     fuelField.textContent = "COMBUSTÍVEL: " + selectFuel.value;
-    value.textContent = "VALOR: R$ " + calcPrice(litersInput.value).toFixed(2).replace(".", ",");
+    value[0].textContent = "VALOR: R$ " + calcPrice(litersInput.value).toFixed(2).replace(".", ",");
+    value[1].textContent = "VALOR: R$ " + calcPrice(litersInput.value).toFixed(2).replace(".", ",");
 });
 
 litersInput.addEventListener("change", () => {
-    quant.textContent = "QUANTIDADE: " + litersInput.value + " LITROS";
-    value.textContent = "VALOR: R$ " + calcPrice(litersInput.value).toFixed(2).replace(".", ",");
+    quant[0].textContent = "QUANTIDADE: " + litersInput.value + " LITROS";
+    quant[1].textContent = "QUANTIDADE: " + litersInput.value + " LITROS";
+
+    value[0].textContent = "VALOR: R$ " + calcPrice(litersInput.value).toFixed(2).replace(".", ",");
+    value[1].textContent = "VALOR: R$ " + calcPrice(litersInput.value).toFixed(2).replace(".", ",");
 });
 
 let date = new Date();
 
-dateDay.textContent += date.toLocaleDateString('pt-br', {dateStyle: "short"});
-hour.textContent += date.toLocaleTimeString('pt-br', {timeStyle: "short"});
+dateDay[0].textContent += date.toLocaleDateString('pt-br', {dateStyle: "short"});
+dateDay[1].textContent += date.toLocaleDateString('pt-br', {dateStyle: "short"});
+hour[0].textContent += date.toLocaleTimeString('pt-br', {timeStyle: "short"});
+hour[1].textContent += date.toLocaleTimeString('pt-br', {timeStyle: "short"});
 
 timeInput.addEventListener("change", () => {
-    hour.textContent = "HORA: " + timeInput.value; 
+    hour[0].textContent = "HORA: " + timeInput.value; 
+    hour[1].textContent = "HORA: " + timeInput.value; 
 });
 
 frontmenSelect.addEventListener("change", () => {
-    frontmenField.textContent = "FRENTISTA: " + frontmenSelect.value;
+    frontmenField[0].textContent = "FRENTISTA: " + frontmenSelect.value;
+    frontmenField[1].textContent = "FRENTISTA: " + frontmenSelect.value;
 
     frontmans.forEach(frent => {
         if(frontmenSelect.value == frent.name){
-            registrationField.textContent = "MATRÍCULA: " + frent.registration;
+            registrationField[0].textContent = "MATRÍCULA: " + frent.registration;
+            registrationField[1].textContent = "MATRÍCULA: " + frent.registration;
         }
     });
 });
 
 function clearFields(){
     fleetField.textContent = "FROTA:";
-    driverField.textContent = "MOTORISTA:";
+    driverField.textContent = "TERCEIRO:";
     plateField.textContent = "PLACA:";
 }
 
@@ -107,8 +116,10 @@ fleetInput.addEventListener("change", () => {
     data.forEach(lessor => {
         lessor.vehicles.forEach(vehicle => {
             if(info == vehicle.fleet || info == vehicle.plate){
-                fleetField.textContent = "FROTA: " + vehicle.fleet;
-                driverField.textContent = "MOTORISTA: " + lessor.name;
+                fleetField[0].textContent = "FROTA: " + vehicle.fleet;
+                fleetField[1].textContent = "FROTA: " + vehicle.fleet;
+                driverField[0].textContent = "TERCEIRO: " + lessor.name;
+                driverField[1].textContent = "TERCEIRO: " + lessor.name;
 
                 if(vehicle.plate != "NULL"){
                     let sufixoplate = vehicle.plate.slice(3);
@@ -116,9 +127,11 @@ fleetInput.addEventListener("change", () => {
 
                     let plate = prefixoplate + "-" + sufixoplate;
 
-                    plateField.textContent = "PLACA: " + plate;
+                    plateField[0].textContent = "PLACA: " + plate;
+                    plateField[1].textContent = "PLACA: " + plate;
                 }else{
-                    plateField.textContent = "PLACA: SEM PLACA";
+                    plateField[0].textContent = "PLACA: SEM PLACA";
+                    plateField[1].textContent = "PLACA: SEM PLACA";
                 }                
             }
         });
@@ -145,7 +158,8 @@ btnUpdateFuelValue.addEventListener("click", () => {
 });
 
 controlInput.addEventListener("change", () => {
-    numSupply.textContent = "ABAST. NÚMERO: " + controlInput.value;
+    numSupply[0].textContent = "ABAST. NÚMERO: " + controlInput.value;
+    numSupply[1].textContent = "ABAST. NÚMERO: " + controlInput.value;
 });
 
 btnPrint.addEventListener("click", () => {
