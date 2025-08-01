@@ -257,6 +257,9 @@ button {
         position: absolute;
         left: 0;
         top: 0;
+        gap: 120px;
+        scale: 0.7;
+        margin-top: 0;
     }
 }
 
