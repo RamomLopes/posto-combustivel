@@ -181,6 +181,8 @@ function closeDialog(){
 
 btnCloseDialog.addEventListener("click", closeDialog);
 
+ticket[1].classList.remove('ticket');
+
 btnShowSecondCopy.addEventListener("click", () => {
 
     if (ticket[1].classList.contains('show')){
