@@ -29,6 +29,8 @@ const btnUpdateFuelValue = document.getElementById("btn-update");
 const btnCloseDialog = document.getElementById("btn-close-dialog");
 const inputFuelPrice = document.getElementById("input-config");
 const spanNotification = document.getElementById("span-notification");
+const btnShowSecondCopy = document.getElementById("btn-second-copy");
+const ticket = document.querySelectorAll(".ticket");
 
 const frontmans = [
     { name: "", registration: "" },
@@ -179,3 +181,17 @@ function closeDialog(){
 
 btnCloseDialog.addEventListener("click", closeDialog);
 
+btnShowSecondCopy.addEventListener("click", () => {
+
+    if (ticket[1].classList.contains('show')){
+        ticket[1].classList.remove('show');
+        ticket[1].classList.add('hidden');
+        ticket[1].classList.remove('ticket');
+   
+    }else if (ticket[1].classList.contains('hidden')){
+        ticket[1].classList.remove('hidden');
+        ticket[1].classList.add('show'); 
+        ticket[1].classList.add('ticket');
+    }
+        
+});

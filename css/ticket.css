@@ -98,6 +98,14 @@ button {
     }
 }
 
+.show, .show * {
+    display: block;
+}
+
+.hidden, .hidden * {
+    display: none;
+}
+
 #area-impressao {
     width: 100%;
     display: flex;
@@ -250,6 +258,7 @@ button {
     body * {
         visibility: hidden;
     }
+
     #area-impressao, #area-impressao * {
         visibility: visible;
     }
@@ -260,6 +269,10 @@ button {
         gap: 120px;
         scale: 0.7;
         margin-top: 0;
+
+        .second-copy, .second-copy * {
+            visibility: hidden;
+        }
     }
 }
 
