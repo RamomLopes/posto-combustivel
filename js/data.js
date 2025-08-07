@@ -197,6 +197,10 @@ const data = [
         { fleet: "991925", plate: "TCT2G06" },], 
     supply: 0.0, 
     third: "1" },
+    { name: "ALIST LOCACAO DE MAQ., EQUIP. E SERV. AGRICOLAS LTDA ", vehicles: [
+        { fleet: "970125", plate: "NULL" },], 
+    supply: 0.0, 
+    third: "1" },
 ];
 
 export default data;
