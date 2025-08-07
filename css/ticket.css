@@ -123,7 +123,7 @@ button {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    border: 2px solid black;
+    border-bottom: .1px solid rgba(0, 0, 0, 0.24);
 
     .ticket-header {
         width: 420px;
@@ -267,7 +267,6 @@ button {
         left: 0;
         top: 0;
         gap: 120px;
-        scale: 0.7;
         margin-top: 0;
 
         .second-copy, .second-copy * {
