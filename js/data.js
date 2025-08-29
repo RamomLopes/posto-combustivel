@@ -20,7 +20,7 @@ const data = [
         { fleet: "25013684", plate: "RTA7A00" }], 
         supply: 0.0 },
     { name: "AGROPECUÁRIA SEVERO LTDA", vehicles: [
-        { fleet: "2503404", plate: "HHG7809" } 
+        { fleet: "2503404", plate: "HHG7809" }, 
         { fleet: "2504404", plate: "QUU2D71" }], 
         supply: 0.0 },
     { name: "AGROTÉCNICA INDUSTRIAL TORRES LTDA", vehicles: [
@@ -217,6 +217,13 @@ const data = [
     { name: "ALIST LOCACAO DE MAQ., EQUIP. E SERV. AGRICOLAS LTDA ", vehicles: [
         { fleet: "970125", plate: "NULL" }, 
         { fleet: "970225", plate: "PQM1F39" },], 
+    supply: 0.0, 
+    third: "1" },
+    { name: "PRODUTIVA AERO AGRICOLA", vehicles: [
+        { fleet: "513471", plate: "EYP4332" }, 
+        { fleet: "613471", plate: "NULL" }, 
+        { fleet: "713471", plate: "SUI0J11" }, 
+        { fleet: "813471", plate: "NULL" },], 
     supply: 0.0, 
     third: "1" },
 ];
