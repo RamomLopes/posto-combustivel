@@ -1,10 +1,12 @@
 const data = [
     { name: "AGROPECUÁRIA AGILE EIRELLI LTDA", vehicles: [
+        { fleet: "25037893", plate: "RGC8B96" }, 
         { fleet: "25047893", plate: "QOX6J06" }, 
         { fleet: "25057893", plate: "RTO6H20" }, 
         { fleet: "2507893", plate: "BCQ5F69" }], 
         supply: 0.0 },
     { name: "AGROPECUÁRIA AGROLEVA LTDA", vehicles: [
+        { fleet: "2502756", plate: "PUS6176" }, 
         { fleet: "2504756", plate: "HNE2B83" }, 
         { fleet: "2505756", plate: "MKK0543" }], 
         supply: 0.0 },
@@ -18,7 +20,8 @@ const data = [
         { fleet: "25013684", plate: "RTA7A00" }], 
         supply: 0.0 },
     { name: "AGROPECUÁRIA SEVERO LTDA", vehicles: [
-        { fleet: "2503404", plate: "HHG7809" }], 
+        { fleet: "2503404", plate: "HHG7809" } 
+        { fleet: "2504404", plate: "QUU2D71" }], 
         supply: 0.0 },
     { name: "AGROTÉCNICA INDUSTRIAL TORRES LTDA", vehicles: [
         { fleet: "25016677", plate: "HLG6283" }], 
@@ -35,6 +38,8 @@ const data = [
         supply: 0.0 },
     { name: "DEOLINO FERREIRA DE CARVALHO", vehicles: [
         { fleet: "25017314", plate: "GYQ6686" }, 
+        { fleet: "25027314", plate: "QNR2961" }, 
+        { fleet: "25037314", plate: "HED8917" }, 
         { fleet: "25047314", plate: "HTI2I12" }], 
         supply: 0.0 },
     { name: "ELAINE DE CARVALHO", vehicles: [
@@ -106,8 +111,11 @@ const data = [
         { fleet: "25035731", plate: "HKF8640" }], 
         supply: 0.0 },
     { name: "RICARDO ANDRADE E ROSALCA E. A. LTDA", vehicles: [
+        { fleet: "2501782", plate: "OOW9893" }, 
         { fleet: "2502782", plate: "PUK1868" }, 
-        { fleet: "2503782", plate: "PZK0G52" }], 
+        { fleet: "2503782", plate: "PZKOG52" }, 
+        { fleet: "2504782", plate: "PVZ4784" }, 
+        { fleet: "2505782", plate: "OWS8146" }], 
         supply: 0.0 },
     { name: "TERESINHA DE LOURDES FARIA BRUNO", vehicles: [
         { fleet: "2501036", plate: "NND5H38" }], 
@@ -170,9 +178,16 @@ const data = [
         supply: 0.0, 
         third: "1" },
     { name: "VIANA PAIVA", vehicles: [
+        { fleet: "491502", plate: "NULL" }, 
+        { fleet: "491602", plate: "NULL" }, 
+        { fleet: "491702", plate: "NULL" }, 
+        { fleet: "491902", plate: "NULL" }, 
+        { fleet: "492002", plate: "NULL" }, 
+        { fleet: "492102", plate: "NULL" }, 
+        { fleet: "492202", plate: "NULL" }, 
+        { fleet: "492402", plate: "NULL" }, 
         { fleet: "492502", plate: "NULL" }, 
-        { fleet: "492002", plate: "NULL" },
-        { fleet: "491502", plate: "NULL" },], 
+        { fleet: "492602", plate: "NULL" },], 
     supply: 0.0, 
     third: "1" },
     { name: "FORÇA VERDE", vehicles: [
@@ -194,7 +209,8 @@ const data = [
         { fleet: "991625", plate: "EOD7B32" },
         { fleet: "991725", plate: "TCC7I01" },
         { fleet: "991825", plate: "APQ3459" },
-        { fleet: "991925", plate: "TCT2G06" },], 
+        { fleet: "991925", plate: "TCT2G06" },
+        { fleet: "992025", plate: "OXY5C96" },], 
     supply: 0.0, 
     third: "1" },
     { name: "ALIST LOCACAO DE MAQ., EQUIP. E SERV. AGRICOLAS LTDA ", vehicles: [
