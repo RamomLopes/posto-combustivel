@@ -135,6 +135,7 @@ const data = [
         third: "1" },
     { name: "AVI ROCHA SERVIÇOS AGRÍCOLAS LTDA", vehicles: [
         { fleet: "114424", plate: "FKX5I46" }, 
+        { fleet: "1014424", plate: "HTF6D16" }, 
         { fleet: "214424", plate: "NULL" }, 
         { fleet: "314424", plate: "NULL" }, 
         { fleet: "414424", plate: "NULL" }, 
