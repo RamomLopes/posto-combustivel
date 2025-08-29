@@ -215,7 +215,8 @@ const data = [
     supply: 0.0, 
     third: "1" },
     { name: "ALIST LOCACAO DE MAQ., EQUIP. E SERV. AGRICOLAS LTDA ", vehicles: [
-        { fleet: "970125", plate: "NULL" },], 
+        { fleet: "970125", plate: "NULL" }, 
+        { fleet: "970225", plate: "PQM1F39" },], 
     supply: 0.0, 
     third: "1" },
 ];
