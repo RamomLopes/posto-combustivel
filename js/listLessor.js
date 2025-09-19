@@ -1,4 +1,4 @@
-import data from './data.js';
+import data from '../data';
 
 const gridLessor = document.querySelector('.lessor-grid');
 const gridThird = document.querySelector('.third-grid');

@@ -1,4 +1,4 @@
-import data from './data.js';
+import data from '../data';
 
 const value = document.querySelectorAll(".value");
 const quant = document.querySelectorAll(".quant");
