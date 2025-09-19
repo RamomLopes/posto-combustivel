@@ -1,4 +1,4 @@
-import data from "../data";
+import data from "../data.js";
 
 const span = document.getElementById("span");
 const inputSearch = document.getElementById("input");
