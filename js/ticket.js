@@ -5,8 +5,8 @@ const quant = document.querySelectorAll(".quant");
 const dateDay = document.querySelectorAll(".data2");
 const hour = document.querySelectorAll(".hora");
 
-const frontmenSelect = document.getElementById("select-frent");
-const frontmenField = document.querySelectorAll(".frent");
+const employeeSelect = document.getElementById("select-frent");
+const employeeField = document.querySelectorAll(".frent");
 const registrationField = document.querySelectorAll(".mat");
 const litersInput = document.getElementById("input-litros");
 const fleetInput = document.getElementById("input-fleet");
@@ -32,7 +32,7 @@ const spanNotification = document.getElementById("span-notification");
 const btnShowSecondCopy = document.getElementById("btn-second-copy");
 const ticket = document.querySelectorAll(".ticket");
 
-const frontmans = [
+const employees = [
     { name: "", registration: "" },
     { name: "RAMOM LOPES", registration: "77227" },
     { name: "AIRTON SATIL", registration: "77851" },
@@ -43,11 +43,11 @@ const frontmans = [
     { name: "WALISON SANTANA", registration: "77824" },
 ];
 
-frontmans.forEach(frontman => {
+employees.forEach(frontman => {
     const optionElement = document.createElement('option');
     optionElement.value = frontman.name;
     optionElement.textContent = frontman.name;
-    frontmenSelect.appendChild(optionElement);
+    employeeSelect.appendChild(optionElement);
 });
 
 function calcPrice(quantity){
@@ -89,12 +89,12 @@ timeInput.addEventListener("change", () => {
     hour[1].textContent = "HORA: " + timeInput.value; 
 });
 
-frontmenSelect.addEventListener("change", () => {
-    frontmenField[0].textContent = "FRENTISTA: " + frontmenSelect.value;
-    frontmenField[1].textContent = "FRENTISTA: " + frontmenSelect.value;
+employeeSelect.addEventListener("change", () => {
+    employeeField[0].textContent = "FRENTISTA: " + employeeSelect.value;
+    employeeField[1].textContent = "FRENTISTA: " + employeeSelect.value;
 
-    frontmans.forEach(frent => {
-        if(frontmenSelect.value == frent.name){
+    employees.forEach(frent => {
+        if(employeeSelect.value == frent.name){
             registrationField[0].textContent = "MATRÍCULA: " + frent.registration;
             registrationField[1].textContent = "MATRÍCULA: " + frent.registration;
         }
