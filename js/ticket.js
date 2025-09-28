@@ -181,19 +181,17 @@ function closeDialog(){
 
 btnCloseDialog.addEventListener("click", closeDialog);
 
+// inicialmente é vizualizado apenas um ticket
 ticket[1].classList.remove('ticket');
 
 btnShowSecondCopy.addEventListener("click", () => {
 
     if (ticket[1].classList.contains('show')){
-        ticket[1].classList.remove('show');
+        ticket[1].classList.remove('show', 'ticket');
         ticket[1].classList.add('hidden');
-        ticket[1].classList.remove('ticket');
-   
     }else if (ticket[1].classList.contains('hidden')){
         ticket[1].classList.remove('hidden');
-        ticket[1].classList.add('show'); 
-        ticket[1].classList.add('ticket');
+        ticket[1].classList.add('show', 'ticket'); 
     }
         
 });
