@@ -132,7 +132,7 @@ const data = [
         { fleet: "214145", plate: "NULL" }, 
         { fleet: "314145", plate: "OQC4C79" }], 
         supply: 0.0, 
-        third: "1" },
+        third: true },
     { name: "AVI ROCHA SERVIÇOS AGRÍCOLAS LTDA", vehicles: [
         { fleet: "114424", plate: "FKX5I46" }, 
         { fleet: "1014424", plate: "HTF6D16" }, 
@@ -143,41 +143,41 @@ const data = [
         { fleet: "614424", plate: "NULL" },
         { fleet: "914424", plate: "NULL" },], 
         supply: 0.0, 
-        third: "1" },
+        third: true },
     { name: "C2 MÁQUINAS E ENGENHARIA LTDA", vehicles: [
         { fleet: "114073", plate: "NULL" }, 
         { fleet: "114098", plate: "NULL" }, 
         { fleet: "214098", plate: "NULL" }], 
         supply: 0.0,
-        third: "1" },
+        third: true },
     { name: "VALENCE AGRO LTDA", vehicles: [
         { fleet: "214641", plate: "NULL" }], 
         supply: 0.0, 
-        third: "1" },
+        third: true },
     { name: "ELETROMARZINHO INSTALAÇÃO E MANUTENÇÃO", vehicles: [
         { fleet: "950724", plate: "NULL" }], 
         supply: 0.0, 
-        third: "1" },
+        third: true },
     { name: "LL DA SILVA EQUIPAMENTOS INDUSTRIAIS", vehicles: [
         { fleet: "113351", plate: "DWG7H41" }], 
         supply: 0.0, 
-        third: "1" },
+        third: true },
     { name: "POLÍCIA CIVIL", vehicles: [
         { fleet: "2527190", plate: "SYZ0F92" }, 
         { fleet: "2526190", plate: "SYZ0F94" }], 
         supply: 0.0, 
-        third: "1" },
+        third: true },
     { name: "POLÍCIA MILITAR", vehicles: [
         { fleet: "2519190", plate: "QXW2H60" }, 
         { fleet: "2520190", plate: "QXW3C06" }, 
         { fleet: "2510190", plate: "QMV2129" }], 
         supply: 0.0, 
-        third: "1" },
+        third: true },
     { name: "POLÍCIA AMBIENTAL", vehicles: [
         { fleet: "2501190", plate: "PXM4771" }, 
         { fleet: "2522190", plate: "RTP8C12" }], 
         supply: 0.0, 
-        third: "1" },
+        third: true },
     { name: "VIANA PAIVA", vehicles: [
         { fleet: "491502", plate: "NULL" }, 
         { fleet: "491602", plate: "NULL" }, 
@@ -190,7 +190,7 @@ const data = [
         { fleet: "492502", plate: "NULL" }, 
         { fleet: "492602", plate: "NULL" },], 
     supply: 0.0, 
-    third: "1" },
+    third: true },
     { name: "FORÇA VERDE", vehicles: [
         { fleet: "990125", plate: "FKQ4594" }, 
         { fleet: "990225", plate: "TDV5D54" },
@@ -213,19 +213,19 @@ const data = [
         { fleet: "991925", plate: "TCT2G06" },
         { fleet: "992025", plate: "OXY5C96" },], 
     supply: 0.0, 
-    third: "1" },
+    third: true },
     { name: "ALIST LOCACAO DE MAQ., EQUIP. E SERV. AGRICOLAS LTDA ", vehicles: [
         { fleet: "970125", plate: "NULL" }, 
         { fleet: "970225", plate: "PQM1F39" },], 
     supply: 0.0, 
-    third: "1" },
+    third: true },
     { name: "PRODUTIVA AERO AGRICOLA", vehicles: [
         { fleet: "513471", plate: "EYP4332" }, 
         { fleet: "613471", plate: "NULL" }, 
         { fleet: "713471", plate: "SUI0J11" },  
         { fleet: "813471", plate: "NULL" },], 
     supply: 0.0, 
-    third: "1" },
+    third: true },
 ];
 
 export default data;

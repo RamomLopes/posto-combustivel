@@ -124,13 +124,12 @@ fleetInput.addEventListener("change", () => {
                 driverField[1].textContent = "TERCEIRO: " + lessor.name;
 
                 if(vehicle.plate != "NULL"){
-                    let sufixoplate = vehicle.plate.slice(3);
-                    let prefixoplate = vehicle.plate.slice(0, 3);
+                    let suffixPlate = vehicle.plate.slice(3);
+                    let prefixPlate = vehicle.plate.slice(0, 3);
+                    let plateFormated = prefixPlate + "-" + suffixPlate;
 
-                    let plate = prefixoplate + "-" + sufixoplate;
-
-                    plateField[0].textContent = "PLACA: " + plate;
-                    plateField[1].textContent = "PLACA: " + plate;
+                    plateField[0].textContent = "PLACA: " + plateFormated;
+                    plateField[1].textContent = "PLACA: " + plateFormated;
                 }else{
                     plateField[0].textContent = "PLACA: SEM PLACA";
                     plateField[1].textContent = "PLACA: SEM PLACA";

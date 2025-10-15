@@ -16,11 +16,7 @@ for (let i = 0; i < localStorage.length; i++) {
         registerSupply.textContent = value + ' litros';
         registerRemaind.textContent = (300 - (+value)) + ' litros';
 
-        if (value >= 245) {
-            registerRemaind.style = 'color: lightcoral';
-        }else if(value < 245 && value >= 200) {
-            registerRemaind.style = 'color: yellow';
-        }
+        registerRemaind.style.color = (value >= 245) ? 'lightcoral' : (value >= 200) ? 'yellow' : registerRemaind.style.color;
 
         register.appendChild(registerName);
         register.appendChild(registerSupply);

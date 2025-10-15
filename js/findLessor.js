@@ -50,11 +50,9 @@ function clearFields(){
 }
 
 inputSearch.addEventListener("change", () => {
-
     listFleets.textContent = "";
-
     let input = inputSearch.value.toUpperCase();
-    
+
     data.forEach(lessor => {
         lessor.vehicles.forEach(vehicle => {
             if (input != vehicle.fleet || input != vehicle.plate) {
@@ -64,7 +62,6 @@ inputSearch.addEventListener("change", () => {
             }
         });
     });
-    
 
     data.forEach(lessor => {
         lessor.vehicles.forEach(vehicle => {
@@ -78,11 +75,11 @@ inputSearch.addEventListener("change", () => {
                 spanFleet.textContent = "Frota: " + vehicle.fleet;
 
                 if(vehicle.plate != "NULL"){
-                    let sufixoplate = vehicle.plate.slice(3);
-                    let prefixoplate = vehicle.plate.slice(0, 3);
-                    let plate = prefixoplate + "-" + sufixoplate;
+                    let suffixPlate = vehicle.plate.slice(3);
+                    let prefixPlate = vehicle.plate.slice(0, 3);
+                    let plateFormated = prefixPlate + "-" + suffixPlate;
 
-                    spanPlate.textContent = "Placa: " + plate;
+                    spanPlate.textContent = "Placa: " + plateFormated;
                 }else{
                     spanPlate.textContent = "Placa: " + "---";
                 }
@@ -92,7 +89,7 @@ inputSearch.addEventListener("change", () => {
                 showListElements(lessorName);
                 updateSupply(lessorName);
                 
-                if(lessor.third == "1"){
+                if(lessor.third === true){
                     labelSpan.textContent = "Terceiro";
                     qtdGroupPanel.style = "display: none";
                 }else{
@@ -109,12 +106,7 @@ inputSearch.addEventListener("change", () => {
 btnCloseDialog.addEventListener("click", closeDialog);
 
 function showDialog(message){
-
-    if(message != null || message != ""){
-        messageDialog.textContent = message;
-    }else{
-        messageDialog.textContent = "Mensagem padrão";
-    }
+    messageDialog.textContent = (message != null || message != "") ? message : "Mensagem padrão";
 
     dialog.style = "display: block";
     dialogOverlay.style = "display: block";
@@ -199,8 +191,7 @@ dialogBtnReset.addEventListener("click", () => {
 });
 
 btnFullReset.addEventListener('click', () => {
-    if (confirm('Deseja realmente deletar todos os dados de abastecimentos?')){
-        localStorage.clear();
-    }
+    confirm('Deseja realmente deletar todos os dados de abastecimentos?') ? localStorage.clear() : console.log('Reset cancelado');
+    location.reload();
 });
 
