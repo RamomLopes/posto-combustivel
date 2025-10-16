@@ -51,7 +51,7 @@ function clearFields(){
 
 inputSearch.addEventListener("change", () => {
     listFleets.textContent = "";
-    let input = inputSearch.value.toUpperCase();
+    const input = inputSearch.value.toUpperCase();
 
     data.forEach(lessor => {
         lessor.vehicles.forEach(vehicle => {
@@ -75,9 +75,9 @@ inputSearch.addEventListener("change", () => {
                 spanFleet.textContent = "Frota: " + vehicle.fleet;
 
                 if(vehicle.plate != "NULL"){
-                    let suffixPlate = vehicle.plate.slice(3);
-                    let prefixPlate = vehicle.plate.slice(0, 3);
-                    let plateFormated = prefixPlate + "-" + suffixPlate;
+                    const suffixPlate = vehicle.plate.slice(3);
+                    const prefixPlate = vehicle.plate.slice(0, 3);
+                    const plateFormated = prefixPlate + "-" + suffixPlate;
 
                     spanPlate.textContent = "Placa: " + plateFormated;
                 }else{
@@ -125,7 +125,7 @@ function updateSupply(name){
     }
     quantSupply.textContent = `${localStorage.getItem(name)} litros`;
 
-    let remainder = 300 - localStorage.getItem(name);
+    const remainder = 300 - localStorage.getItem(name);
     quantRemainder.textContent = `${remainder} litros`;
 }
 
@@ -139,7 +139,7 @@ function showListElements(name){
     data.forEach(lessor => {
         lessor.vehicles.forEach(vehicle => {
             if(lessor.name == name){
-                let item = document.createElement('li');
+                const item = document.createElement('li');
                 item.textContent = vehicle.fleet;
                 ul.appendChild(item);
                 listFleets.appendChild(ul);
@@ -165,14 +165,12 @@ dialogBtnAdd.addEventListener("click", () => {
                     reset = false;
                 }
                 
-                console.log(quantity);
                 lessor.supply = +inputSupply.value + +quantity;
                 localStorage.setItem(lessor.name, lessor.supply);
                 updateSupply(lessor.name);
             }
         })
     }
-
     inputSupply.value = "";
 });
 
@@ -186,7 +184,6 @@ dialogBtnReset.addEventListener("click", () => {
             updateSupply(lessor.name);
         }
     })
-
     closeDialog();
 });
 

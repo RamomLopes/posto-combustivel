@@ -40,7 +40,7 @@ const employees = [
     { name: "MIRIÃ LORRAINE", registration: "77767" },
     { name: "WELLINGTON CANDIDO", registration: "77323" },
     { name: "WESLEY SILVA", registration: "77208" },
-    { name: "WALISON SANTANA", registration: "77824" },
+    { name: "WALISON SANTANA", registration: "77824" }
 ];
 
 employees.forEach(frontman => {
@@ -58,12 +58,10 @@ function calcPrice(quantity){
     }else {
         result = quantity * +localStorage.getItem("priceDiesel");
     }
-    
     return result;
 }
 
 selectFuel.addEventListener("change", () => {
-    
     fuelField.textContent = "COMBUSTÍVEL: " + selectFuel.value;
     value[0].textContent = "VALOR: R$ " + calcPrice(litersInput.value).toFixed(2).replace(".", ",");
     value[1].textContent = "VALOR: R$ " + calcPrice(litersInput.value).toFixed(2).replace(".", ",");
@@ -77,12 +75,14 @@ litersInput.addEventListener("change", () => {
     value[1].textContent = "VALOR: R$ " + calcPrice(litersInput.value).toFixed(2).replace(".", ",");
 });
 
-let date = new Date();
+const date = new Date();
+const currentDate = date.toLocaleDateString('pt-br', { dateStyle: 'short' });
+const currentTime = date.toLocaleTimeString('pt-br', { timeStyle: 'short' });
 
-dateDay[0].textContent += date.toLocaleDateString('pt-br', {dateStyle: "short"});
-dateDay[1].textContent += date.toLocaleDateString('pt-br', {dateStyle: "short"});
-hour[0].textContent += date.toLocaleTimeString('pt-br', {timeStyle: "short"});
-hour[1].textContent += date.toLocaleTimeString('pt-br', {timeStyle: "short"});
+dateDay[0].textContent += currentDate;
+dateDay[1].textContent += currentDate;
+hour[0].textContent += currentTime;
+hour[1].textContent += currentTime;
 
 timeInput.addEventListener("change", () => {
     hour[0].textContent = "HORA: " + timeInput.value; 
@@ -108,7 +108,7 @@ function clearFields(){
 }
 
 fleetInput.addEventListener("change", () => {
-    let info = fleetInput.value.toUpperCase();
+    const info = fleetInput.value.toUpperCase();
 
     if(info == ""){
         clearFields();
@@ -124,9 +124,9 @@ fleetInput.addEventListener("change", () => {
                 driverField[1].textContent = "TERCEIRO: " + lessor.name;
 
                 if(vehicle.plate != "NULL"){
-                    let suffixPlate = vehicle.plate.slice(3);
-                    let prefixPlate = vehicle.plate.slice(0, 3);
-                    let plateFormated = prefixPlate + "-" + suffixPlate;
+                    const suffixPlate = vehicle.plate.slice(3);
+                    const prefixPlate = vehicle.plate.slice(0, 3);
+                    const plateFormated = prefixPlate + "-" + suffixPlate;
 
                     plateField[0].textContent = "PLACA: " + plateFormated;
                     plateField[1].textContent = "PLACA: " + plateFormated;
@@ -163,9 +163,7 @@ controlInput.addEventListener("change", () => {
     numSupply[1].textContent = "ABAST. NÚMERO: " + controlInput.value;
 });
 
-btnPrint.addEventListener("click", () => {
-    window.print();
-});
+btnPrint.addEventListener("click", () => { window.print(); });
 
 btnOpenPanelUpdateFuelValue.addEventListener("click", () => {
     dialog.style = "display: block";
@@ -184,7 +182,6 @@ btnCloseDialog.addEventListener("click", closeDialog);
 ticket[1].classList.remove('ticket');
 
 btnShowSecondCopy.addEventListener("click", () => {
-
     if (ticket[1].classList.contains('show')){
         ticket[1].classList.remove('show', 'ticket');
         ticket[1].classList.add('hidden');
@@ -192,5 +189,4 @@ btnShowSecondCopy.addEventListener("click", () => {
         ticket[1].classList.remove('hidden');
         ticket[1].classList.add('show', 'ticket'); 
     }
-        
 });

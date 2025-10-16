@@ -2,15 +2,14 @@
 const table = document.querySelector('#table-lessor');
 
 for (let i = 0; i < localStorage.length; i++) {
-    let key = localStorage.key(i);
-    let value = localStorage.getItem(key);
-    console.log(`Chave: ${key}, Valor: ${value}`);
+    const key = localStorage.key(i);
+    const value = localStorage.getItem(key);
 
     if (!key.toString().includes('price') && (value !== '0')){
-        let register = document.createElement('tr');
-        let registerName = document.createElement('td');
-        let registerSupply = document.createElement('td');
-        let registerRemaind = document.createElement('td');
+        const register = document.createElement('tr');
+        const registerName = document.createElement('td');
+        const registerSupply = document.createElement('td');
+        const registerRemaind = document.createElement('td');
 
         registerName.textContent = key;
         registerSupply.textContent = value + ' litros';

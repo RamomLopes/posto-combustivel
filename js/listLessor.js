@@ -5,7 +5,7 @@ const gridThird = document.querySelector('.third-grid');
 
 function fillGrid() {
     data.forEach(element => {
-        let span = document.createElement('span');
+        const span = document.createElement('span');
         span.textContent = element.name;
 
         !element.third ? gridLessor.appendChild(span) : gridThird.appendChild(span)    
