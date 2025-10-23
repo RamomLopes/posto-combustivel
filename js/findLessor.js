@@ -27,13 +27,17 @@ const messageDialog = document.getElementById("message-dialog");
 
 const btnFullReset = document.getElementById("btn-full-reset");
 
-let lessorName;
-let reset = false;
+let recoveredData;
 
 init();
 
 function init(){
     qtdGroupPanel.style = "display: none";
+}
+
+function initArraySupplies(){
+    const arraySupplies = JSON.parse(localStorage.getItem(recoveredData.name));
+    recoveredData.supplies = arraySupplies;
 }
 
 function showLessorInformation(){
@@ -53,54 +57,55 @@ inputSearch.addEventListener("change", () => {
     listFleets.textContent = "";
     const input = inputSearch.value.toUpperCase();
 
-    data.forEach(lessor => {
-        lessor.vehicles.forEach(vehicle => {
-            if (input != vehicle.fleet || input != vehicle.plate) {
-                clearFields();
-                span.textContent = "Arrendante ou terceiro não encontrado!";
-                init();
-            }
-        });
-    });
+    if(input === '' || input === 'NULL'){
+        clearFields();
+        span.textContent = "Faça sua pesquisa";
+        return
+    }
 
-    data.forEach(lessor => {
-        lessor.vehicles.forEach(vehicle => {
-
-            if(input == "" || input == "NULL"){
-                clearFields();
-                span.textContent = "Faça sua pesquisa";
-            }else if(input == vehicle.fleet || input == vehicle.plate){
-                
-                span.textContent = lessor.name;
-                spanFleet.textContent = "Frota: " + vehicle.fleet;
-
-                if(vehicle.plate != "NULL"){
-                    const suffixPlate = vehicle.plate.slice(3);
-                    const prefixPlate = vehicle.plate.slice(0, 3);
-                    const plateFormated = prefixPlate + "-" + suffixPlate;
-
-                    spanPlate.textContent = "Placa: " + plateFormated;
-                }else{
-                    spanPlate.textContent = "Placa: " + "---";
-                }
-
-                lessorName = lessor.name;
-                
-                showListElements(lessorName);
-                updateSupply(lessorName);
-                
-                if(lessor.third === true){
-                    labelSpan.textContent = "Terceiro";
-                    qtdGroupPanel.style = "display: none";
-                }else{
-                    labelSpan.textContent = "Arrendante";
-                    showLessorInformation();
-                }
-            }
-
-        });
+    recoveredData = data.find( d => {
+        const vehicleFound = d.vehicles.find( v => 
+            v.fleet === input || v.plate === input
+        )
+        return vehicleFound;
     })
 
+    if(!recoveredData){
+        clearFields();
+        span.textContent = "Arrendante ou terceiro não encontrado!";
+        init();
+        return
+    }
+
+    initArraySupplies();
+    const lessorName = recoveredData.name;
+    const recoveredVehicles = recoveredData.vehicles.find(v => v.fleet === input || v.plate === input);
+
+    span.textContent = lessorName;
+    spanFleet.textContent = "Frota: " + recoveredVehicles.fleet;
+
+    const plate = recoveredVehicles.plate;
+
+    if(plate != 'NULL'){
+        const suffixPlate = plate.slice(3);
+        const prefixPlate = plate.slice(0, 3);
+        const plateFormated = prefixPlate + "-" + suffixPlate;
+
+        spanPlate.textContent = "Placa: " + plateFormated;
+    } else {
+        spanPlate.textContent = "Placa: " + "---";
+    }
+
+    showListElements(recoveredData);
+    updateSupply(lessorName);
+
+    if(recoveredData.third === true){
+        labelSpan.textContent = "Terceiro";
+        qtdGroupPanel.style = "display: none";
+    }else{
+        labelSpan.textContent = "Arrendante";
+        showLessorInformation();
+    }
 });
 
 btnCloseDialog.addEventListener("click", closeDialog);
@@ -117,75 +122,70 @@ function closeDialog(){
     dialogOverlay.style = "display: none";
 }
 
-function updateSupply(name){
-    if(localStorage.getItem(name) == null || localStorage.getItem(name) == "null"){
+function updateSupply(lessorName){
+    if(localStorage.getItem(lessorName) == null || localStorage.getItem(lessorName) == "null"){
         quantSupply.textContent = "0 litros";
         quantRemainder.textContent = "300 litros"
         return;
     }
-    quantSupply.textContent = `${localStorage.getItem(name)} litros`;
+    const quantity = JSON.parse(localStorage.getItem(lessorName));
+    const sumQuantity = quantity.reduce((sum, quant) => sum += quant, 0);
+    quantSupply.textContent = `${sumQuantity} litros`;
 
-    const remainder = 300 - localStorage.getItem(name);
+    const remainder = 300 - sumQuantity;
     quantRemainder.textContent = `${remainder} litros`;
 }
 
-function showListElements(name){
+function showListElements(lessor){
     listFleetsPanel.style = "display: flex; flex-direction: column";
 
     while(ul.firstChild){
         ul.removeChild(ul.firstChild);
     }
 
-    data.forEach(lessor => {
-        lessor.vehicles.forEach(vehicle => {
-            if(lessor.name == name){
-                const item = document.createElement('li');
-                item.textContent = vehicle.fleet;
-                ul.appendChild(item);
-                listFleets.appendChild(ul);
-            }
-        });
-    });
+    const vehicles = lessor.vehicles;
+
+    for(let i = 0; i < vehicles.length; i++){
+        const item = document.createElement('li');
+        item.textContent = vehicles[i].fleet;
+        ul.appendChild(item);
+        listFleets.appendChild(ul);
+    }
+
 }
 
 btnSupply.addEventListener("click", () => {
     showDialog("Abastecimento");
 });
 
-dialogBtnAdd.addEventListener("click", () => {
+function addSupply(){
+    const lessorName = recoveredData.name;
 
-    if(inputSupply.value != ""){
+    if(inputSupply.value !== ""){
 
-        data.forEach(lessor => {
-            if(lessor.name == lessorName){
-                let quantity = localStorage.getItem(lessor.name);
+        if(recoveredData.supplies === null){
+            recoveredData.supplies = []; // transformando a variavel que está nula em um array vazio
+        }
 
-                if(reset){
-                    quantity = 0;
-                    reset = false;
-                }
-                
-                lessor.supply = +inputSupply.value + +quantity;
-                localStorage.setItem(lessor.name, lessor.supply);
-                updateSupply(lessor.name);
-            }
-        })
+        recoveredData.supplies.push(+inputSupply.value);
+        localStorage.setItem(lessorName, JSON.stringify(recoveredData.supplies));
+        updateSupply(lessorName);
     }
     inputSupply.value = "";
-});
+}
 
-dialogBtnReset.addEventListener("click", () => {
+dialogBtnAdd.addEventListener("click", addSupply);
 
-    data.forEach(lessor => {
-        if(lessor.name == lessorName){
-            reset = true;
-            localStorage.setItem(lessor.name, 0);
-            lessor.supply == 0.0;
-            updateSupply(lessor.name);
-        }
-    })
+function resetSupply(){
+    const lessorName = recoveredData.name;
+    localStorage.setItem(lessorName, '[]');
+    recoveredData.supplies = [];
+    updateSupply();
+
     closeDialog();
-});
+}
+
+dialogBtnReset.addEventListener("click", resetSupply);
 
 btnFullReset.addEventListener('click', () => {
     confirm('Deseja realmente deletar todos os dados de abastecimentos?') ? localStorage.clear() : console.log('Reset cancelado');
