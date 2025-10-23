@@ -96,7 +96,7 @@ inputSearch.addEventListener("change", () => {
         spanPlate.textContent = "Placa: " + "---";
     }
 
-    showListElements(recoveredData);
+    showListElements();
     updateSupply(lessorName);
 
     if(recoveredData.third === true){
@@ -136,7 +136,9 @@ function updateSupply(lessorName){
     quantRemainder.textContent = `${remainder} litros`;
 }
 
-function showListElements(lessor){
+function showListElements(){
+    const lessor = recoveredData;
+
     listFleetsPanel.style = "display: flex; flex-direction: column";
 
     while(ul.firstChild){
