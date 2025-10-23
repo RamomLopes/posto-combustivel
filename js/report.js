@@ -4,7 +4,7 @@ const table = document.querySelector('#table-lessor');
 for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
     const value = JSON.parse(localStorage.getItem(key));
-    const formatedValue = value.reduce((sum, v) => sum += v);
+    const formatedValue = value.reduce((sum, v) => sum += v, 0);
 
     if (!key.toString().includes('price') && (formatedValue !== 0)){
         const register = document.createElement('tr');

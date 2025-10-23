@@ -108,35 +108,38 @@ function clearFields(){
 }
 
 fleetInput.addEventListener("change", () => {
-    const info = fleetInput.value.toUpperCase();
+    const info = fleetInput.value.toUpperCase().trim();
 
     if(info == ""){
         clearFields();
         return;
     } 
 
-    data.forEach(lessor => {
-        lessor.vehicles.forEach(vehicle => {
-            if(info == vehicle.fleet || info == vehicle.plate){
-                fleetField[0].textContent = "FROTA: " + vehicle.fleet;
-                fleetField[1].textContent = "FROTA: " + vehicle.fleet;
-                driverField[0].textContent = "TERCEIRO: " + lessor.name;
-                driverField[1].textContent = "TERCEIRO: " + lessor.name;
-
-                if(vehicle.plate != "NULL"){
-                    const suffixPlate = vehicle.plate.slice(3);
-                    const prefixPlate = vehicle.plate.slice(0, 3);
-                    const plateFormated = prefixPlate + "-" + suffixPlate;
-
-                    plateField[0].textContent = "PLACA: " + plateFormated;
-                    plateField[1].textContent = "PLACA: " + plateFormated;
-                }else{
-                    plateField[0].textContent = "PLACA: SEM PLACA";
-                    plateField[1].textContent = "PLACA: SEM PLACA";
-                }                
-            }
-        });
+    const lessorFound = data.find( l => {
+        const vehicles = l.vehicles.find( v => v.fleet === info || v.plate === info );
+        return vehicles;
     });
+
+    if(lessorFound){
+        fleetField[0].textContent = "FROTA: " + info;
+        fleetField[1].textContent = "FROTA: " + info;
+        driverField[0].textContent = "TERCEIRO: " + lessorFound.name;
+        driverField[1].textContent = "TERCEIRO: " + lessorFound.name;
+
+        for(let item of lessorFound.vehicles){
+            if(item.plate != "NULL"){
+                const suffixPlate = item.plate.slice(3);
+                const prefixPlate = item.plate.slice(0, 3);
+                const plateFormated = prefixPlate + "-" + suffixPlate;
+
+                plateField[0].textContent = "PLACA: " + plateFormated;
+                plateField[1].textContent = "PLACA: " + plateFormated;
+            }else{
+                plateField[0].textContent = "PLACA: SEM PLACA";
+                plateField[1].textContent = "PLACA: SEM PLACA";
+            }               
+        }
+    }
 });
 
 btnUpdateFuelValue.addEventListener("click", () => {
@@ -163,8 +166,6 @@ controlInput.addEventListener("change", () => {
     numSupply[1].textContent = "ABAST. NÚMERO: " + controlInput.value;
 });
 
-btnPrint.addEventListener("click", () => { window.print(); });
-
 btnOpenPanelUpdateFuelValue.addEventListener("click", () => {
     dialog.style = "display: block";
     dialogOverlay.style = "display: block";
@@ -176,6 +177,7 @@ function closeDialog(){
     spanNotification.textContent = "";
 }
 
+btnPrint.addEventListener("click", () => { window.print(); });
 btnCloseDialog.addEventListener("click", closeDialog);
 
 // inicialmente é vizualizado apenas um ticket

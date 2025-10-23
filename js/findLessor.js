@@ -31,20 +31,20 @@ let recoveredData;
 
 init();
 
-function init(){
+function init() {
     qtdGroupPanel.style = "display: none";
 }
 
-function initArraySupplies(){
+function initArraySupplies() {
     const arraySupplies = JSON.parse(localStorage.getItem(recoveredData.name));
     recoveredData.supplies = arraySupplies;
 }
 
-function showLessorInformation(){
+function showLessorInformation() {
     qtdGroupPanel.style = "display: flex";
 }
 
-function clearFields(){
+function clearFields() {
     span.textContent = "";
     spanFleet.textContent = "Frota";
     spanPlate.textContent = "Placa";
@@ -108,21 +108,19 @@ inputSearch.addEventListener("change", () => {
     }
 });
 
-btnCloseDialog.addEventListener("click", closeDialog);
-
-function showDialog(message){
+function showDialog(message) {
     messageDialog.textContent = (message != null || message != "") ? message : "Mensagem padrão";
-
+    
     dialog.style = "display: block";
     dialogOverlay.style = "display: block";
 }
 
-function closeDialog(){
+function closeDialog() {
     dialog.style = "display: none";
     dialogOverlay.style = "display: none";
 }
 
-function updateSupply(lessorName){
+function updateSupply(lessorName) {
     if(localStorage.getItem(lessorName) == null || localStorage.getItem(lessorName) == "null"){
         quantSupply.textContent = "0 litros";
         quantRemainder.textContent = "300 litros"
@@ -131,44 +129,40 @@ function updateSupply(lessorName){
     const quantity = JSON.parse(localStorage.getItem(lessorName));
     const sumQuantity = quantity.reduce((sum, quant) => sum += quant, 0);
     quantSupply.textContent = `${sumQuantity} litros`;
-
+    
     const remainder = 300 - sumQuantity;
     quantRemainder.textContent = `${remainder} litros`;
 }
 
-function showListElements(){
+function showListElements() { 
     const lessor = recoveredData;
-
+    
     listFleetsPanel.style = "display: flex; flex-direction: column";
-
+    
     while(ul.firstChild){
         ul.removeChild(ul.firstChild);
     }
-
+    
     const vehicles = lessor.vehicles;
-
+    
     for(let i = 0; i < vehicles.length; i++){
         const item = document.createElement('li');
         item.textContent = vehicles[i].fleet;
         ul.appendChild(item);
         listFleets.appendChild(ul);
     }
-
+    
 }
 
-btnSupply.addEventListener("click", () => {
-    showDialog("Abastecimento");
-});
-
-function addSupply(){
+function addSupply() {
     const lessorName = recoveredData.name;
-
+    
     if(inputSupply.value !== ""){
-
+        
         if(recoveredData.supplies === null){
             recoveredData.supplies = []; // transformando a variavel que está nula em um array vazio
         }
-
+        
         recoveredData.supplies.push(+inputSupply.value);
         localStorage.setItem(lessorName, JSON.stringify(recoveredData.supplies));
         updateSupply(lessorName);
@@ -176,17 +170,18 @@ function addSupply(){
     inputSupply.value = "";
 }
 
-dialogBtnAdd.addEventListener("click", addSupply);
-
-function resetSupply(){
+function resetSupply() {
     const lessorName = recoveredData.name;
     localStorage.setItem(lessorName, '[]');
     recoveredData.supplies = [];
     updateSupply();
-
+    
     closeDialog();
 }
 
+btnCloseDialog.addEventListener("click", closeDialog);
+btnSupply.addEventListener("click", () => { showDialog("Abastecimento"); });
+dialogBtnAdd.addEventListener("click", addSupply);
 dialogBtnReset.addEventListener("click", resetSupply);
 
 btnFullReset.addEventListener('click', () => {
